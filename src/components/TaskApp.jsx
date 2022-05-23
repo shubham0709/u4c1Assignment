@@ -10,11 +10,19 @@ const TaskApp = ({ tasks, setTasks }) => {
   return (
     <div data-cy="task-app" className={styles.taskApp}>
       {/* Header */}
-      <TaskHeader tasks={tasks} setTasks={setTasks}></TaskHeader>
+      <TaskHeader
+        tasks={tasks}
+        setTasks={setTasks}
+        className="task-header"
+      ></TaskHeader>
       {/* Add Task */}
-      <AddTask tasks={tasks} setTasks={setTasks}></AddTask>
+      <AddTask
+        tasks={tasks}
+        setTasks={setTasks}
+        className={styles.taskAdd}
+      ></AddTask>
       {/* Tasks */}
-      <Tasks tasks={tasks} setTasks={setTasks}></Tasks>
+      <Tasks tasks={tasks} setTasks={setTasks} className="task-list"></Tasks>
     </div>
   );
 };

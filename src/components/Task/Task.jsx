@@ -14,15 +14,19 @@ const Task = ({ tasks, setTasks }) => {
   };
 
   return (
-    <>
+    <div className="taskLi">
       {tasks.map((elem) => (
         <li data-cy="task" className={styles.task}>
           <input
             type="checkbox"
             data-cy="task-checkbox"
-            onChange={() => console.log(elem)}
+            onChange={(e) => {
+              console.log(e.target.checked);
+            }}
           />
-          <div data-cy="task-text">{elem.text}</div>
+          <div data-cy="task-text" className={styles.checked}>
+            {elem.text}
+          </div>
           <Counter></Counter>
           <button
             data-cy="task-remove-button"
@@ -30,11 +34,11 @@ const Task = ({ tasks, setTasks }) => {
               removeTask(elem);
             }}
           >
-            Remove
+            X
           </button>
         </li>
       ))}
-    </>
+    </div>
   );
 };
 
